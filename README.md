@@ -135,3 +135,21 @@ collection <- ee$
   select('stable_lights')$
   map(createTimeBand)
 ```
+
+## Credits :bow:
+
+Many many many thanks we would like to offer an **special thanks** :raised_hands: :clap: to Cesar Aybar
+Author and Maintainer (https://github.com/r-spatial/rgee/) of **rgee**. In addition, the following third-party R/Python packages contributed indirectly to the develop of rgee:
+
+  - **[gee\_asset\_manager - Lukasz Tracewski](https://github.com/tracek/gee_asset_manager)** 
+  - **[geeup - Samapriya Roy](https://github.com/samapriya/geeup)**
+  - **[geeadd - Samapriya Roy](https://github.com/samapriya/gee_asset_manager_addon)**  
+  - **[cartoee - Kel Markert](https://github.com/KMarkert/cartoee)**
+  - **[geetools - Rodrigo E. Principe](https://github.com/gee-community/gee_tools)**
+  - **[landsat-extract-gee - Loïc Dutrieux](https://github.com/loicdtx/landsat-extract-gee)**
+  - **[earthEngineGrabR - JesJehle](https://github.com/JesJehle/earthEngineGrabR)**
+  - **[sf - Edzer Pebesma](https://github.com/r-spatial/sf)**
+  - **[stars - Edzer Pebesma](https://github.com/r-spatial/stars)**
+  - **[gdalcubes - Marius Appel](https://github.com/appelmar/gdalcubes)**
+
+#### Readme template obtained from [dbparser](https://github.com/Dainanahan/dbparser)
