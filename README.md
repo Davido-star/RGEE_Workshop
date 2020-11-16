@@ -124,6 +124,11 @@ Map$addLayer(image, vizParams, "Landsat 8 True color Composite")
 
 ```
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16768318/81945044-2cbd8280-95c3-11ea-9ef5-fd9f6fd5fe89.png" width=80%>
+</p>
+
+
 
 ### 2. Compute the trend of night-time lights ([JS version](https://github.com/google/earthengine-api))
 
