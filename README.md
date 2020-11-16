@@ -144,6 +144,33 @@ createTimeBand <-function(img) {
 }
 ```
 
+Compute a linear fit over the series of values at each pixel, visualizing the y-intercept in green, and positive/negative slopes as red/blue.
+
+``` r
+col_reduce <- collection$reduce(ee$Reducer$linearFit())
+col_reduce <- col_reduce$addBands(
+  col_reduce$select('scale'))
+ee_print(col_reduce)
+```
+
+Create a interactive visualization\! 
+
+``` r
+Map$setCenter(9.08203, 47.39835, 3)
+Map$addLayer(
+  eeObject = col_reduce,
+  visParams = list(
+    bands = c("scale", "offset", "scale"),
+    min = 0,
+    max = c(0.18, 20, -0.18)
+  ),
+  name = "stable lights trend"
+)
+
+```
+
+![rgee\_01](https://user-images.githubusercontent.com/16768318/71565699-51e4a500-2aa9-11ea-83c3-9e1d32c82ba6.png)
+
 Map the time band creation helper over the [night-time lights collection](https://developers.google.com/earth-engine/datasets/catalog/NOAA_DMSP-OLS_NIGHTTIME_LIGHTS).
 
 ``` r
