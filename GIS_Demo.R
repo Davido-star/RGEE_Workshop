@@ -16,7 +16,7 @@ Install ee_install to get earth engine function
 
 ```{r}
 ee_install() #only need to run once
-ee_Initialize(email = 'shreenapyakurel@gmail.com')
+ee_Initialize(email = 'INSERT EMAIL')
 ```
 
 if there is an error saying python environment is not available or something related run these 2 lines and repeat previous 2 lines
