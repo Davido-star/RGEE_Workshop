@@ -33,7 +33,7 @@ image <- ee$Image("LANDSAT/LC08/C01/T1/LC08_044034_20140318")
 Map$centerObject(image)
 
 vizParams <- list(
-  bands = c("B5", "B4", "B3"),
+  bands = c("B4", "B3", "B2"),
   min = 5000, max = 15000, gamma = 1.3
 )
 
@@ -41,35 +41,29 @@ Map$addLayer(image, vizParams, "Landsat 8 True color Composite")
 
 ```
 
-Part 2: Night lights
-``` r
-createTimeBand <-function(img) {
-  year <- ee$Date(img$get('system:time_start'))$get('year')$subtract(1991L)
-  ee$Image(year)$byte()$addBands(img)
-}
+Visualize night-time lights
+
+Load dataset and calcutalte average 
+```{r}
+dataset  <- ee$ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')$filter(ee$Filter$date('2010-01-01', '2010-12-31'))
+
+nighttimeLights <-  dataset$select('stable_lights')
+
+data_reduce <- nighttimeLights$reduce(ee$Reducer$mean())
+
 ```
 
-Compute a linear fit over the series of values at each pixel, visualizing the y-intercept in green, and positive/negative slopes as red/blue.
 
-``` r
-col_reduce <- collection$reduce(ee$Reducer$linearFit())
-col_reduce <- col_reduce$addBands(
-  col_reduce$select('scale'))
-ee_print(col_reduce)
-```
-
-Create a interactive visualization\! 
-
-``` r
-Map$setCenter(9.08203, 47.39835, 3)
-Map$addLayer(
-  eeObject = col_reduce,
-  visParams = list(
-    bands = c("scale", "offset", "scale"),
-    min = 0,
-    max = c(0.18, 20, -0.18)
-  ),
-  name = "stable lights trend"
+```{r}
+nighttimeLightsVis <-  list(
+  min =  3.0,
+  max =  60.0
 )
 
+Map$setCenter(7.82, 49.1, 4)
+
+Map$addLayer(data_reduce, nighttimeLightsVis, 'Nighttime Lights')
+
+
 ```
+
