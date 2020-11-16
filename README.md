@@ -209,7 +209,7 @@ Map$addLayer(
 
 ```
 
-![rgee\_01](https://user-images.githubusercontent.com/16768318/71565699-51e4a500-2aa9-11ea-83c3-9e1d32c82ba6.png)
+![rgee\_01](https://raw.githubusercontent.com/MVanDenburg92/RGEE_Workshop/main/images/nightime_rgee.png)
 
 
 ## Credits :bow:
