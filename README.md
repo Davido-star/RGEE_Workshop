@@ -125,12 +125,38 @@ Map$addLayer(image, vizParams, "Landsat 8 True color Composite")
 ```
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16768318/81945044-2cbd8280-95c3-11ea-9ef5-fd9f6fd5fe89.png" width=80%>
+  <img src="https://raw.githubusercontent.com/MVanDenburg92/RGEE_Workshop/main/images/image_1.PNG" width=80%>
 </p>
 
+### 2.Visualize night-time lights
+
+Load dataset and calcutalte average 
+```{r}
+dataset  <- ee$ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')$filter(ee$Filter$date('2010-01-01', '2010-12-31'))
+
+nighttimeLights <-  dataset$select('stable_lights')
+
+data_reduce <- nighttimeLights$reduce(ee$Reducer$mean())
+
+```
 
 
-### 2. Compute the trend of night-time lights ([JS version](https://github.com/google/earthengine-api))
+```{r}
+nighttimeLightsVis <-  list(
+  min =  3.0,
+  max =  60.0
+)
+
+Map$setCenter(7.82, 49.1, 4)
+
+Map$addLayer(data_reduce, nighttimeLightsVis, 'Nighttime Lights')
+```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MVanDenburg92/RGEE_Workshop/main/images/nighttime2.png" width=80%>
+</p>
+
+### 3. Compute the trend of night-time lights ([JS version](https://github.com/google/earthengine-api))
 
 Authenticate and Initialize the Earth Engine R API.
 
