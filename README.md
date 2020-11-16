@@ -1,5 +1,5 @@
-# RGEE_Workshop
-RGEE Workshop code
+# RGEE Workshop code
+
 ## What is Google Earth Engine?
 
 [Google Earth Engine](https://earthengine.google.com/) is a cloud-based platform that allows users to have an easy access to a petabyte-scale archive of remote sensing data and run geospatial analysis on Google’s infrastructure. Currently, Google offers support only for Python and JavaScript. `rgee` will fill the gap **starting to provide support to R\!**. Below you will find the comparison between the syntax of `rgee` and the two Google-supported client libraries.
