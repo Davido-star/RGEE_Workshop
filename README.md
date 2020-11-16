@@ -108,7 +108,24 @@ Also, consider looking at the [setup section](https://r-spatial.github.io/rgee/a
 
 ## Quick Demo
 
-### 1. Compute the trend of night-time lights ([JS version](https://github.com/google/earthengine-api))
+### 1. Visualize a Landsat image collection in a true color composite 
+
+```{r}
+image <- ee$Image("LANDSAT/LC08/C01/T1/LC08_044034_20140318")
+            
+Map$centerObject(image)
+
+vizParams <- list(
+  bands = c("B5", "B4", "B3"),
+  min = 5000, max = 15000, gamma = 1.3
+)
+
+Map$addLayer(image, vizParams, "Landsat 8 True color Composite")
+
+```
+
+
+### 2. Compute the trend of night-time lights ([JS version](https://github.com/google/earthengine-api))
 
 Authenticate and Initialize the Earth Engine R API.
 
