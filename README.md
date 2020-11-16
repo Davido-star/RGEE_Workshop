@@ -139,7 +139,7 @@ collection <- ee$
 ## Credits :bow:
 
 Many many many thanks we would like to offer an **special thanks** :raised_hands: :clap: to Cesar Aybar
-Author and Maintainer (https://github.com/r-spatial/rgee/) of **rgee**. In addition, the following third-party R/Python packages contributed indirectly to the develop of rgee:
+Author and Maintainer (https://github.com/r-spatial/rgee/) of **rgee**. It was his code  that created the demos used in today's workshop. In addition, the following third-party R/Python packages contributed indirectly to the develop of rgee:
 
   - **[gee\_asset\_manager - Lukasz Tracewski](https://github.com/tracek/gee_asset_manager)** 
   - **[geeup - Samapriya Roy](https://github.com/samapriya/geeup)**
