@@ -149,6 +149,15 @@ createTimeBand <-function(img) {
 }
 ```
 
+Map the time band creation helper over the [night-time lights collection](https://developers.google.com/earth-engine/datasets/catalog/NOAA_DMSP-OLS_NIGHTTIME_LIGHTS).
+
+``` r
+collection <- ee$
+  ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')$
+  select('stable_lights')$
+  map(createTimeBand)
+```
+
 Compute a linear fit over the series of values at each pixel, visualizing the y-intercept in green, and positive/negative slopes as red/blue.
 
 ``` r
@@ -176,14 +185,6 @@ Map$addLayer(
 
 ![rgee\_01](https://user-images.githubusercontent.com/16768318/71565699-51e4a500-2aa9-11ea-83c3-9e1d32c82ba6.png)
 
-Map the time band creation helper over the [night-time lights collection](https://developers.google.com/earth-engine/datasets/catalog/NOAA_DMSP-OLS_NIGHTTIME_LIGHTS).
-
-``` r
-collection <- ee$
-  ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')$
-  select('stable_lights')$
-  map(createTimeBand)
-```
 
 ## Credits :bow:
 
