@@ -4,7 +4,7 @@ authors: Miles Van Denburg and Shreena Pyakurel
 output: html_notebook
 ---
 
-Initiate Google Earth engine and load libraries  
+Initiate Google Earth Engine and load libraries  
 ```{r}
 remotes::install_github("r-spatial/rgee", force = TRUE)
 library(rgee)
@@ -12,7 +12,7 @@ library(sf)
 library(tidyverse)
 ```
 
-Install ee_install to get earth engine function 
+use ee_install to get earth engine functions 
 
 ```{r}
 ee_install() #only need to run once
