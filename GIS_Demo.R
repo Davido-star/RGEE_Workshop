@@ -43,7 +43,7 @@ Map$addLayer(image, vizParams, "Landsat 8 True color Composite")
 
 Visualize night-time lights
 
-Load dataset and calcutalte average 
+Load dataset  
 ```{r}
 dataset  <- ee$ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')$filter(ee$Filter$date('2010-01-01', '2010-12-31'))
 
